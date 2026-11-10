@@ -31,6 +31,9 @@ Astro may warn that the posts collection is empty until a post is added.
 - Edit [`src/content/pages/about.md`](./src/content/pages/about.md) to update
   the About page. Social preview images are generated from the site title and
   description unless a custom `site.ogImage` is provided.
+- Edit the greeting and intro directly in
+  [`src/pages/index.astro`](./src/pages/index.astro). They are separate from
+  `site.description`, which is used for metadata, preview images, and RSS.
 
 ## Adding posts
 
