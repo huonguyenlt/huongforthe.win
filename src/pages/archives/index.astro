@@ -47,6 +47,7 @@ const publishDate = (post: CollectionEntry<"posts">) =>
   <Breadcrumb />
 
   <Main pageTitle={t.pages.archivesTitle} pageDesc={t.pages.archivesDesc}>
+    {filteredPosts.length === 0 && <p>{t.pages.noPosts}</p>}
     {
       Object.entries(
         getPostsByGroupCondition(filteredPosts, post =>

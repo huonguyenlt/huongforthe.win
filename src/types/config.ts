@@ -74,6 +74,7 @@ interface SocialLink {
    * e.g. "github" → src/assets/icons/socials/github.svg
    */
   name: string;
+  /** Leave empty to show an inactive icon until the profile URL is configured. */
   url: string;
   /**
    * Accessible label for the icon link (aria-label, title attribute).

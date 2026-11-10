@@ -47,6 +47,8 @@ export default {
 
     postsTitle: "Posts",
     postsDesc: "All the articles I've posted.",
+    noPosts: "No posts yet. Check back soon.",
+    noTags: "No tags yet.",
 
     archivesTitle: "Archives",
     archivesDesc: "All the articles I've archived.",
