@@ -15,8 +15,9 @@ current: remove items once they are done.
   `http://localhost:4321/`).
 - To do: write the first post in `src/content/posts/`. The About page
   (`src/content/pages/about.md`) is a short placeholder.
-- Keep `LICENSE` and the README credits: the MIT license requires the original
-  author's copyright notice.
+- Keep `LICENSE` unchanged: the MIT license requires keeping the original
+  copyright and permission notice. The README credit to the AstroPaper author
+  is kept by choice, not because the license requires it.
 
 ## Checks
 
