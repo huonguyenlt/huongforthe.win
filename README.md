@@ -52,7 +52,10 @@ Write the post here.
 ```
 
 The author defaults to the name in the site configuration. Posts can also have
-tags, a `draft: true` flag, and other metadata. See the
+tags, a `draft: true` flag, and other metadata. Set `lang: "vi"` in a post's
+frontmatter to mark it as Vietnamese; posts without `lang` use the site's
+default language (`en`). This sets the post page's language metadata and does
+not translate its content. See the
 [AstroPaper documentation](https://github.com/satnaing/astro-paper#readme) for
 more options.
 
