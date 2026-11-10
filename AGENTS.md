@@ -10,7 +10,8 @@ current: remove items once they are done.
 - Done: social icons with an empty `url` render dimmed and unclickable
   (`src/components/Socials.astro`). Empty-state messages appear when there are
   no posts or tags.
-- To do: add social profile URLs in `astro-paper.config.ts`.
+- Done: configured GitHub, LinkedIn, YouTube, and email links in
+  `astro-paper.config.ts`. The X profile icon was removed; X post sharing remains.
 - To do: set `site.url` to the real domain before deploying (currently
   `http://localhost:4321/`).
 - To do: write the first post in `src/content/posts/`. The About page

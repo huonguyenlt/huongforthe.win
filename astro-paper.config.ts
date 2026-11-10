@@ -24,12 +24,27 @@ export default defineAstroPaperConfig({
     search: "pagefind",
     toc: true,
   },
-  // Add URLs to activate these icons.
   socials: [
-    { name: "github", url: "" },
-    { name: "x", url: "" },
-    { name: "linkedin", url: "" },
-    { name: "mail", url: "" },
+    {
+      name: "github",
+      url: "https://github.com/huonguyenlt",
+      linkTitle: "Huong Nguyen on GitHub",
+    },
+    {
+      name: "linkedin",
+      url: "https://www.linkedin.com/in/huonguyenlt/",
+      linkTitle: "Huong Nguyen on LinkedIn",
+    },
+    {
+      name: "youtube",
+      url: "https://www.youtube.com/@huonguyenlt",
+      linkTitle: "Huong Nguyen on YouTube",
+    },
+    {
+      name: "mail",
+      url: "mailto:huonguyenlt@gmail.com",
+      linkTitle: "Email Huong Nguyen",
+    },
   ],
   shareLinks: [
     { name: "whatsapp", url: "https://wa.me/?text=" },
