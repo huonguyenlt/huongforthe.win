@@ -38,6 +38,12 @@ Manage the background server with `astro dev stop`, `astro dev status`, and `ast
 
 Full documentation: https://docs.astro.build
 
+Consult [AstroPaper's posts](https://astro-paper.pages.dev/posts/) for practical
+guides and examples when working on related features, such as creating posts,
+[adding LaTeX equations](https://astro-paper.pages.dev/posts/how-to-add-latex-equations-in-blog-posts/),
+integrating comments, and updating dependencies. Check the guidance against this
+project's current setup before applying it.
+
 Consult these guides before working on related tasks:
 
 - [Adding pages, dynamic routes, or middleware](https://docs.astro.build/en/guides/routing/)
