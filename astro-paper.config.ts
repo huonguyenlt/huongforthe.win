@@ -2,8 +2,7 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    // Replace this with the public URL before deploying.
-    url: "http://localhost:4321/",
+    url: "https://huongforthe.win/",
     title: "Huong's Blog",
     description: "I keep my thoughts here.",
     author: "Huong Nguyen",

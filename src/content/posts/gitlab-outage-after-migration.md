@@ -8,6 +8,7 @@ draft: false
 tags:
   - devops
   - gitlab
+  - work
 ---
 
 ## What happened?
