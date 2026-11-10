@@ -22,9 +22,8 @@ Astro may warn that the posts collection is empty until a post is added.
 
 - Update the title, description, author, and time zone in
   [`astro-paper.config.ts`](./astro-paper.config.ts).
-- Before deploying, replace `site.url` with the public blog URL. Until then,
-  canonical links, the RSS feed, the sitemap, and social metadata use
-  `http://localhost:4321/`.
+- Set `site.url` to the public blog URL. It is used for canonical links, the
+  RSS feed, the sitemap, and social metadata.
 - Add profile URLs to the `socials` entries in
   [`astro-paper.config.ts`](./astro-paper.config.ts). Leave a URL empty to keep
   its icon visible but inactive. Email links use the `mailto:` prefix.
@@ -56,6 +55,18 @@ The author defaults to the name in the site configuration. Posts can also have
 tags, a `draft: true` flag, and other metadata. See the
 [AstroPaper documentation](https://github.com/satnaing/astro-paper#readme) for
 more options.
+
+## Deploying to Cloudflare Workers
+
+Connect this repository to Cloudflare Workers Builds and use:
+
+- Build command: `pnpm run build`
+- Deploy command: `npx wrangler deploy`
+
+The [Wrangler configuration](./wrangler.jsonc) deploys the static site from
+`dist/` and serves the custom 404 page. The Astro Cloudflare adapter is not
+needed for this static site. Configure the custom domain in Cloudflare and keep
+`site.url` in sync with it.
 
 ## Credits
 
