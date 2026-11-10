@@ -33,6 +33,8 @@ Astro may warn that the posts collection is empty until a post is added.
 - Edit the greeting and intro directly in
   [`src/pages/index.astro`](./src/pages/index.astro). They are separate from
   `site.description`, which is used for metadata, preview images, and RSS.
+- Adjust the light and dark color palettes in
+  [`src/styles/theme.css`](./src/styles/theme.css).
 - Set `features.showArchives` to `true` to restore the Archives page and its
   navigation link.
 

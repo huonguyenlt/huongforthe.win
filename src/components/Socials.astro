@@ -33,7 +33,10 @@ const items = await Promise.all(
         <LinkButton
           href={url || undefined}
           disabled={!url}
-          class:list={["p-2 sm:p-1", url ? "hover:rotate-6" : "opacity-50"]}
+          class:list={[
+            "light:text-accent p-2 sm:p-1",
+            url ? "hover:rotate-6" : "opacity-50",
+          ]}
           title={title}
         >
           <Icon class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" />

@@ -4,6 +4,8 @@
 @import "rehype-callouts/theme/obsidian";
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+/* The light theme is also the default before a theme is selected. */
+@custom-variant light (&:where(:root:not([data-theme=dark]), :root:not([data-theme=dark]) *));
 
 @layer base {
   * {
