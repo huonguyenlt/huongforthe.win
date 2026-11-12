@@ -14,8 +14,7 @@ current: remove items once they are done.
   `astro-paper.config.ts`. The X profile icon was removed; X post sharing remains.
 - To do: set `site.url` to the real domain before deploying (currently
   `http://localhost:4321/`).
-- To do: write the first post in `src/content/posts/`. The About page
-  (`src/content/pages/about.md`) is a short placeholder.
+- The About page (`src/content/pages/about.md`) is a short placeholder.
 - Keep `LICENSE` unchanged: the MIT license requires keeping the original
   copyright and permission notice. The README credit to the AstroPaper author
   is kept by choice, not because the license requires it.
@@ -23,7 +22,6 @@ current: remove items once they are done.
 ## Checks
 
 Run `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
-Astro warns that the posts collection is empty until a post exists.
 
 ## Development
 
