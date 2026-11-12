@@ -69,9 +69,10 @@ Connect this repository to Cloudflare Workers Builds and use:
 - Deploy command: `npx wrangler deploy`
 
 The [Wrangler configuration](./wrangler.jsonc) deploys the static site from
-`dist/` and serves the custom 404 page. The Astro Cloudflare adapter is not
-needed for this static site. Configure the custom domain in Cloudflare and keep
-`site.url` in sync with it.
+`dist/`, serves the custom 404 page, and disables the `workers.dev` route. The
+Astro Cloudflare adapter is not needed for this static site. Configure the
+custom domain in Cloudflare and keep `site.url` in sync with it. Preview and
+version URLs are controlled separately from `workers.dev`.
 
 ## Credits
 

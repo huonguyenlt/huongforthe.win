@@ -1,6 +1,7 @@
 {
   "name": "huongforthewin",
   "compatibility_date": "2026-11-10",
+  "workers_dev": false,
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page"
