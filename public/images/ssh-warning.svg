@@ -1,0 +1,24 @@
+<svg width="1600" height="860" viewBox="0 0 1600 860" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="860" fill="#3D0F2B"/>
+  <g font-family="Consolas, 'Courier New', monospace" fill="#F3F1F3">
+    <g opacity="0.9">
+      <text x="30" y="70" font-size="42" letter-spacing="2">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</text>
+      <text x="30" y="110" font-size="42" letter-spacing="2">@ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! @</text>
+      <text x="30" y="150" font-size="42" letter-spacing="2">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</text>
+    </g>
+
+    <text x="30" y="230" font-size="38" font-weight="700">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</text>
+    <text x="30" y="285" font-size="36">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</text>
+    <text x="30" y="325" font-size="36">It is also possible that a host key has just been changed.</text>
+    <text x="30" y="365" font-size="36">The fingerprint for the ED25519 key sent by the remote host is</text>
+    <text x="30" y="405" font-size="36">SHA256:nV3KJmP9Qe2rT8xwZ7mKf1b4cYp99Gd6sHJtQlLmR8pXZY.</text>
+    <text x="30" y="445" font-size="36">Please contact your system administrator.</text>
+    <text x="30" y="485" font-size="36">Add correct host key in ~/.ssh/known_hosts to get rid of this message.</text>
+    <text x="30" y="525" font-size="36">Offending ECDSA key in ~/.ssh/known_hosts:1</text>
+    <text x="30" y="565" font-size="36">Host key for gitlab.example.com has changed and you have requested strict checking.</text>
+    <text x="30" y="605" font-size="36">Host key verification failed.</text>
+    <text x="30" y="645" font-size="36">fatal: Could not read from remote repository.</text>
+    <text x="30" y="715" font-size="36">Please make sure you have the correct access rights</text>
+    <text x="30" y="755" font-size="36">and the repository exists.</text>
+  </g>
+</svg>
