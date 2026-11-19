@@ -1,6 +1,7 @@
 ---
 title: "When Git Repositories Eat Up Your Gitaly Storage: A Git LFS Migration Story"
 pubDatetime: 2026-11-17T00:00:00+07:00
+modDatetime: 2026-11-18T00:00:00+07:00
 description: >-
   Investigating high GitLab Gitaly repository storage, migrating large files to
   Git LFS, and reclaiming space from unreachable Git objects.
@@ -71,3 +72,65 @@ After successfully migrating the files and force-pushing the rewritten history, 
 Fixing the affected repositories solved the immediate problem, but I didn't want to repeat the same investigation in the future.
 
 As a preventive measure, I configured GitLab's **Maximum push size (MiB)** setting under **Admin Area → Settings → General → Account and limit**. This helps prevent developers from accidentally pushing excessively large amounts of data into Git repositories.
+
+## Update: The repository size did not decrease after housekeeping
+
+After running housekeeping, some repositories did not show a reduction in
+storage — the repository size remained the same. I found that hidden refs on the
+server were still pointing to commits from before the LFS migration. Here is
+how I identified those commits on Gitaly and removed them using GitLab's
+repository cleanup.
+
+1. **Find the repository path on Gitaly.**
+
+   ```sh
+   sudo grep '"grpc.request.glRepository":"project-<id>"' \
+     /var/log/gitlab/gitaly/current | head -n 1
+   ```
+
+   In the log entry, find `grpc.request.repoPath`. For example:
+   `@cluster/repositories/18/af/22347`. The repo path is `/var/opt/gitlab/git-data/repositories/@cluster/repositories/18/af/22347`
+
+2. **List the commits in `refs/keep-around`.** These refs are not shown when
+   you clone the repository, even with `--mirror`.
+
+3. Check each commit hash to find the old pre-LFS commits. Those commits
+   should not be attached to any active branch.
+
+   ```sh
+   git --git-dir="<repository-path>" log --no-walk --oneline <commit hashes>
+   ```
+
+   The `--git-dir` option skips the `safe.directory` ownership check.
+  
+   Also check packed-refs for any additional hidden refs (keep-around, pipelines, merge-requests) 
+   ```sh
+   grep -E "keep-around|pipelines|merge-requests" <repository-path>/packed-refs
+   ```
+
+4. **Prepare a commit map** for GitLab repository cleanup, listing the old
+   commit IDs in the first column and the all-zero hash in the second column:
+
+   ```text
+   <old-commit-id> 0000000000000000000000000000000000000000
+   ```
+
+   Use the full commit IDs. Check that the commits are no longer needed before
+   including them in the map.
+
+5. **Run GitLab repository cleanup.** Upload the commit map under **Settings →
+   Repository → Repository maintenance → Clean up repository**, then select
+   **Start cleanup**. Once cleanup was complete, the repository size
+   decreased.
+
+The screenshots show the project storage breakdown before and after cleanup:
+repository storage decreased from 4.42 GiB to about 746 MiB, while LFS storage
+remained at 4.00 GiB.
+
+Before:
+
+![GitLab project storage breakdown before cleanup: 4.42 GiB repository and 4.00 GiB LFS](../../assets/images/git-lfs-storage-before-cleanup.png)
+
+After:
+
+![GitLab project storage breakdown after cleanup: 746.07 MiB repository and 4.00 GiB LFS](../../assets/images/git-lfs-storage-after-cleanup.png)
